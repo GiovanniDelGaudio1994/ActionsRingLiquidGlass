@@ -172,7 +172,7 @@ class _StatoConceptDashboard extends State<ConceptDashboard> {
     ),
   );
 
-  Widget _pannelloStudio() => _vetro(
+  Widget _pannelloStudio() => _pannelloVetro(
     raggio: 34,
     opacita: _vetro ? .26 : .70,
     child: Row(children: [
@@ -200,7 +200,7 @@ class _StatoConceptDashboard extends State<ConceptDashboard> {
             trailing: Switch(
               value: _vetro,
               onChanged: (value) => setState(() => _vetro = value),
-              activeColor: const Color(0xFF1679FF),
+              activeThumbColor: const Color(0xFF1679FF),
             ),
           )),
           const SizedBox(height: 10),
@@ -382,7 +382,7 @@ class _StatoConceptDashboard extends State<ConceptDashboard> {
   }
 
   Widget _scaffaleDispositivi() {
-    return _vetro(
+    return _pannelloVetro(
       raggio: 35, opacita: _vetro ? .23 : .65,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(28, 22, 21, 21),
@@ -463,7 +463,7 @@ class _StatoConceptDashboard extends State<ConceptDashboard> {
     );
   }
 
-  Widget _vetro({
+  Widget _pannelloVetro({
     required Widget child,
     required double raggio,
     required double opacita,
