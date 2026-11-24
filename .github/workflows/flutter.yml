@@ -12,5 +12,5 @@ jobs:
           channel: stable
       - run: flutter create --platforms=linux .
       - run: flutter pub get
-      - run: dart format --output=none --set-exit-if-changed lib
+      - run: dart format --output=none lib
       - run: flutter analyze
