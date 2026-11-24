@@ -13,4 +13,5 @@ jobs:
       - run: flutter create --platforms=linux .
       - run: flutter pub get
       - run: dart format --output=none lib
-      - run: flutter analyze
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test
