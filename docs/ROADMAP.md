@@ -1,6 +1,7 @@
 # Roadmap
 
 - [x] UI Flutter con otto azioni radiali
+- [x] Layout v0.3.0 ricostruito sul concept ufficiale con otto spicchi CustomPainter e scaffale interattivo
 - [x] Scorciatoia globale da provare su macOS
 - [x] Documentazione didattica e licenza AGPLv3
 - [ ] Foto autentiche dei mouse con licenze di distribuzione verificate
