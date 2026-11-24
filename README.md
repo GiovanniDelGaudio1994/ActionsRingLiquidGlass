@@ -4,7 +4,9 @@
 
 > **Versione 0.2.2 Preview.** Prototipo di laboratorio: macOS è stato provato con una versione precedente. Questa revisione richiede ancora test di compilazione sul Mac. Le funzioni indicate come sperimentali non sono garantite.
 
-![Anteprima grafica](assets/copertina-glassring.svg)
+![GlassRing Studio — concept ufficiale Liquid Glass](assets/glassring-official-concept.jpg)
+
+*Concept UI ufficiale approvato — rappresentazione grafica della direzione di design, non screenshot della release attuale.*
 
 ## Funzioni disponibili nel prototipo
 
