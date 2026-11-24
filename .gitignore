@@ -1,0 +1,17 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+build/
+coverage/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+**/Pods/
+**/Flutter/ephemeral/
+**/DerivedData/
+**/xcuserdata/
+**/Generated.xcconfig
+**/flutter_export_environment.sh
