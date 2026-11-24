@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="GlassRing Studio — menu radiale Liquid Glass">
+<defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#0485c9"/><stop offset=".53" stop-color="#364abb"/><stop offset="1" stop-color="#c34fd4"/></linearGradient><radialGradient id="g"><stop stop-color="#64e9ff" stop-opacity=".75"/><stop offset="1" stop-color="#7767ef" stop-opacity=".4"/></radialGradient></defs>
+<rect width="1200" height="675" rx="35" fill="url(#b)"/>
+<path d="M0 560Q400 120 790 430T1200 20" fill="none" stroke="#9ee8ff" stroke-opacity=".2" stroke-width="100"/>
+<rect x="72" y="75" width="1050" height="530" rx="32" fill="#ffffff" fill-opacity=".13" stroke="#e7f8ff" stroke-opacity=".7"/>
+<text x="110" y="143" font-family="Arial" font-size="44" font-weight="bold" fill="white">GlassRing Studio</text>
+<text x="113" y="178" font-family="Arial" font-size="19" fill="#eaf5ff">Liquid Glass · Launcher radiale · Flutter</text>
+<circle cx="425" cy="380" r="188" fill="none" stroke="#a9edff" stroke-width="3"/>
+<circle cx="425" cy="380" r="86" fill="url(#g)" stroke="#cdf9ff" stroke-width="3"/>
+<text x="425" y="388" text-anchor="middle" fill="white" font-family="Arial" font-size="25" font-weight="bold">GlassRing</text>
+<g fill="#6a9fe5" fill-opacity=".66" stroke="#e5faff" stroke-width="2">
+<circle cx="425" cy="203" r="50"/><circle cx="551" cy="254" r="50"/><circle cx="602" cy="380" r="50"/><circle cx="551" cy="506" r="50"/><circle cx="425" cy="557" r="50"/><circle cx="299" cy="506" r="50"/><circle cx="248" cy="380" r="50"/><circle cx="299" cy="254" r="50"/>
+</g>
+<g fill="white" text-anchor="middle" font-size="14" font-family="Arial">
+<text x="425" y="208">Codice</text><text x="551" y="259">Terminale</text><text x="602" y="385">Foto</text><text x="551" y="511">Musica</text><text x="425" y="562">Appunti</text><text x="299" y="511">Sistema</text><text x="248" y="385">File</text><text x="299" y="259">Browser</text>
+</g>
+<rect x="705" y="225" width="360" height="310" rx="29" fill="#ffffff" fill-opacity=".19" stroke="#d4f8ff"/>
+<text x="736" y="274" fill="white" font-family="Arial" font-size="23" font-weight="bold">Dispositivi previsti</text>
+<g fill="white" font-family="Arial" font-size="18"><text x="740" y="320">MX Master 2S / 3S / 4</text><text x="740" y="359">MX Anywhere · MX Vertical</text><text x="740" y="398">Apple Magic Mouse</text><text x="740" y="437">Function Trackpad K304</text></g>
+<text x="740" y="491" fill="#defff9" font-family="Arial" font-size="15">v0.2.2 Preview — Open Source</text>
+</svg>
