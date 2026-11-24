@@ -1,26 +1,32 @@
-# Architettura di GlassRing (italiano)
+# Architettura GlassRing v0.3.0 (italiano)
 
-## Obiettivo
-Menu radiale per azioni desktop con una UI Flutter e integrazione tramite scorciatoia di sistema. Il progetto è un **prototipo**, non un driver per mouse.
+## 1. Punto di avvio
+\`lib/main.dart\` inizializza Flutter, usa \`window_manager\` per la finestra desktop e mostra \`ConceptDashboard\`.
 
-## Componenti del codice
-- `main()`: inizializza il framework e la finestra desktop con `window_manager`.
-- `Applicazione`: definisce il tema Flutter e la schermata iniziale.
-- `Studio` / `_StatoStudio`: gestisce stati modificabili come visibilità del ring e mouse selezionato. `setState()` informa Flutter che occorre ricostruire i widget.
-- `Azione`: rappresenta i dati immutabili per una voce del ring.
-- `EsecutoreAzioni`: trasforma l'ID di una voce in comando per macOS, Windows o Linux usando `Process.start`.
-- `_registraHotkey()`: tenta di registrare Control + Alt + G tramite `hotkey_manager`; il pulsante superiore del MX Master 2S va configurato per inviare la stessa scorciatoia.
-- `_ring()`: dispone otto pulsanti sul cerchio con seno e coseno.
-- `_dispositivi()`: catalogo illustrativo, **non** scanner Bluetooth/HID.
+## 2. Dati e servizi
+\`lib/services/azioni.dart\` definisce \`AzioneRing\`, \`DispositivoCatalogo\`, le liste di catalogo e \`EsecutoreAzioni\`.
+I modelli contengono dati immutabili. L'esecuzione dei comandi resta separata dai widget.
+Il catalogo è illustrativo: la selezione di un mouse **non prova una connessione hardware**.
 
-## Flusso di input
-Pulsante configurato → scorciatoia globale → callback → `setState` → menu visibile/nascosto → clic su azione → `EsecutoreAzioni.esegui`.
+## 3. Stato dell'interfaccia
+\`ConceptDashboard\` conserva nella propria \`State\` la visibilità della ruota, l'effetto vetro, la voce selezionata, il modello visualizzato e la posizione nello scaffale.
+\`setState()\` aggiorna solo i widget interessati dal nuovo stato.
 
-## Limitazioni
-Il menu non è ancora un overlay indipendente; gesture globali, rilevamento automatico e batteria non sono implementati. `05AC:0265` è un identificativo candidato osservato durante test di scollegamento del K304, non prova di compatibilità esclusiva.
+## 4. Menu radiale con tracciato vettoriale
+\`_PittoreSpicchi\` disegna gli otto settori con i raggi interno/esterno e le funzioni trigonometriche, usando \`Path.arcTo\`.
+\`RingUfficiale\` dispone sopra il disegno gli otto widget interattivi: l'utente seleziona un'azione e \`EsecutoreAzioni\` invoca il comando del sistema operativo.
+Il cerchio centrale è un widget, non un'immagine fittizia.
 
-## Roadmap tecnica
-1. Spostare il menu in una finestra overlay nativa sopra le altre app.
-2. Introdurre una interfaccia `DeviceDiscovery` con implementazioni macOS IOKit/HID, Windows e Linux.
-3. Separare i profili configurabili in file e aggiungere test unitari.
-4. Documentare permessi Accessibility e limitazioni Wayland.
+## 5. Riferimento al concept
+La vista usa una tavola di 1585×992 punti scalata con \`FittedBox\` per mantenere il posizionamento progettato.
+\`_SfondoLiquidGlass\` crea sfondo e nastri con \`CustomPainter\`.
+I pannelli impiegano \`BackdropFilter\`, \`ImageFilter.blur\`, bordi e trasparenze.
+\`ConceptMouse\` ritaglia alcune rappresentazioni di mouse da \`assets/glassring-official-concept.jpg\`; i modelli senza ritaglio mostrano un'icona.
+
+## 6. Scorciatoia e limiti
+\`hotkey_manager\` registra Ctrl+Option+G dove supportato. Il pulsante fisico Logitech va configurato separatamente per emettere questa scorciatoia.
+Nessuna gesture HID globale, lettura batteria o pairing Bluetooth è implementata in v0.3.
+Lo stato di connessione resta dichiarato come non verificato. Non confondere il concept con un prodotto ultimato.
+
+## 7. Verifica
+Eseguire \`flutter create --platforms=macos,windows,linux .\`, \`flutter pub get\`, \`dart format lib\`, \`flutter analyze\` e \`flutter run -d macos\` sul Mac di test.
